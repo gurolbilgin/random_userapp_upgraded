@@ -3,9 +3,9 @@ import * as React from "react";
 function Email(props) {
   return (
     <svg
-      height="5rem"
+      height="30"
       viewBox="0 0 512 512.002"
-      width="5rem"
+      width="30"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >

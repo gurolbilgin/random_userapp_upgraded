@@ -3,9 +3,9 @@ import * as React from "react";
 function Woman(props) {
   return (
     <svg
-      height={512}
+      height={30}
       viewBox="0 0 464 464"
-      width={512}
+      width={30}
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >

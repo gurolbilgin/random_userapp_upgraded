@@ -3,9 +3,9 @@ import * as React from "react";
 function GrowingUpMan(props) {
   return (
     <svg
-      height={512}
+      height={30}
       viewBox="0 0 511.998 511.998"
-      width={512}
+      width={30}
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >

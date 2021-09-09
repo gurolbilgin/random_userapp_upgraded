@@ -2,7 +2,7 @@ import * as React from "react";
 
 function GrowingUpWomen(props) {
   return (
-    <svg height={512} width={512} xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg height={30} width={30} xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
         d="M503.5 331.3c-13.445-32.355-32.781-53.05-49.307-65.84H320.259c-16.526 12.791-35.862 33.486-49.308 65.84l116.515 9z"
         fill="#ffa6d4"

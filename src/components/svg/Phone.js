@@ -1,11 +1,11 @@
-import * as React from "react"
+import * as React from "react";
 
 function Phone(props) {
   return (
     <svg
-      height={80}
+      height={30}
       viewBox="0 0 512 512"
-      width={80}
+      width={30}
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
@@ -32,7 +32,7 @@ function Phone(props) {
         <circle cx={405.999} cy={135.999} r={15} />
       </g>
     </svg>
-  )
+  );
 }
 
-export default Phone
+export default Phone;

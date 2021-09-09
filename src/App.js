@@ -5,6 +5,7 @@ import RandomUser from "./components/randomUser/RandomUser";
 
 function App() {
   const [tempUser, setTempUser] = useState();
+  const [addUser, setAddUser] = useState("");
 
   useEffect(() => {
     getTempUser();
@@ -20,7 +21,7 @@ function App() {
   // console.log(tempUser);
   return (
     <div className="App">
-      <RandomUser tempUser={tempUser} />
+      <RandomUser user={tempUser} getProfileData={getTempUser} />
     </div>
   );
 }
