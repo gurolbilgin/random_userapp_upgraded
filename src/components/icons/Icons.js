@@ -5,11 +5,11 @@ import Phone from "../svg/Phone";
 import Man from "../svg/Man";
 import Woman from "../svg/Woman";
 import GrowingUpMan from "../svg/GrowingUpMan";
-import GrowingUpWomen from "../svg/GrowingUpWomen";
+import { ReactComponent as GrowingUpWomen } from "../../assets/growing-up-woman.svg";
 import Location from "../svg/Location";
 import Padlock from "../svg/Padlock";
 
-const Icons = ({ user, setFeaturedInfo, setTitle, featuredInfo }) => {
+const Icons = ({ user, setFeaturedInfo, setTitle }) => {
   const handleFeatuedInfo = (type) => {
     switch (type) {
       case "email address":
@@ -55,7 +55,6 @@ const Icons = ({ user, setFeaturedInfo, setTitle, featuredInfo }) => {
         });
 
       default:
-        console.log("inside", featuredInfo);
     }
   };
 
@@ -68,14 +67,21 @@ const Icons = ({ user, setFeaturedInfo, setTitle, featuredInfo }) => {
       <Container>
         <Row>
           <Col>
-            <Man
-              className="icons"
-              onMouseEnter={() => {
-                // setTitle();
-                handleFeatuedInfo("name");
-              }}
-            />
-            {/* <Woman className="icons" /> */}
+            {user?.gender === "male" ? (
+              <Man
+                className="icons"
+                onMouseEnter={() => {
+                  handleFeatuedInfo("name");
+                }}
+              />
+            ) : (
+              <Woman
+                className="icons"
+                onMouseEnter={() => {
+                  handleFeatuedInfo("name");
+                }}
+              />
+            )}
           </Col>
           <Col>
             <Email
@@ -86,13 +92,21 @@ const Icons = ({ user, setFeaturedInfo, setTitle, featuredInfo }) => {
             />
           </Col>
           <Col>
-            <GrowingUpMan
-              className="icons"
-              onMouseEnter={() => {
-                handleFeatuedInfo("age");
-              }}
-            />
-            {/* <GrowingUpWomen className="icons" /> */}
+            {user?.gender === "male" ? (
+              <GrowingUpMan
+                className="icons women"
+                onMouseEnter={() => {
+                  handleFeatuedInfo("age");
+                }}
+              />
+            ) : (
+              <GrowingUpWomen
+                className="icons"
+                onMouseEnter={() => {
+                  handleFeatuedInfo("age");
+                }}
+              />
+            )}
           </Col>
           <Col>
             <Location
