@@ -4,8 +4,7 @@ import "./App.css";
 import RandomUser from "./components/randomUser/RandomUser";
 
 function App() {
-  const [tempUser, setTempUser] = useState();
-  const [addUser, setAddUser] = useState("");
+  const [tempUser, setTempUser] = useState([]);
 
   useEffect(() => {
     getTempUser();
@@ -18,10 +17,9 @@ function App() {
       .then((res) => setTempUser(res.data.results[0]));
   };
 
-  // console.log(tempUser);
   return (
     <div className="App">
-      <RandomUser user={tempUser} getProfileData={getTempUser} />
+      <RandomUser user={tempUser} getTempUser={getTempUser} />
     </div>
   );
 }

@@ -9,7 +9,8 @@ import { ReactComponent as GrowingUpWomen } from "../../assets/growing-up-woman.
 import Location from "../svg/Location";
 import Padlock from "../svg/Padlock";
 
-const Icons = ({ user, setFeaturedInfo, setTitle }) => {
+// this function shows the related info when the certain icon is hovered it also changes the icon types acordingly to sex of the person
+const Icons = ({ user, setFeaturedInfo }) => {
   const handleFeatuedInfo = (type) => {
     switch (type) {
       case "email address":
@@ -56,10 +57,6 @@ const Icons = ({ user, setFeaturedInfo, setTitle }) => {
 
       default:
     }
-  };
-
-  const handleTitle = (title) => {
-    setTitle(title);
   };
 
   return (

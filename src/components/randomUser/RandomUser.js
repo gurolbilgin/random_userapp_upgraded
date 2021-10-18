@@ -1,22 +1,15 @@
 import React, { useState } from "react";
 import { Card, Image } from "react-bootstrap";
 import Icons from "../icons/Icons";
-import Buttons from "../button/Buttons";
 import "./RandomUser.css";
 import AddUser from "../addUser/AddUser";
 
-const RandomUser = ({ user, getProfileData }) => {
-  console.log("randomUser Comp:", user);
-
+const RandomUser = ({ user, getTempUser }) => {
   const [featuredInfo, setFeaturedInfo] = useState({
     type: "name",
-    firstParam: user?.name.first,
-    secondParam: user?.name.last,
+    firstParam: "",
+    secondParam: "",
   });
-  const [title, setTitle] = useState("");
-
-  // console.log("random user component updates");
-  console.log("featuredInfo", featuredInfo);
 
   return (
     <Card className="text-center">
@@ -25,25 +18,28 @@ const RandomUser = ({ user, getProfileData }) => {
       </Card.Header>
 
       <Card.Body>
-        <Card.Text>{`my ${featuredInfo.type} is`}</Card.Text>
+        <Card.Text>
+          {featuredInfo.firstParam === "" ? (
+            <Card.Text>
+              <div>Hello</div>
+              <div>See details below</div>
+            </Card.Text>
+          ) : (
+            `my ${featuredInfo.type} is`
+          )}
+        </Card.Text>
         <Card.Title>
-          {/* {user?.name.first + " " + user?.name.last ||
-            featuredInfo.name + " " + featuredInfo.lastName} */}
-          {featuredInfo.firstParam + " " + featuredInfo.secondParam}
+          {featuredInfo.firstParam === ""
+            ? ""
+            : featuredInfo.firstParam + " " + featuredInfo.secondParam}
         </Card.Title>
 
         {/* Icons Container */}
-        <Icons
-          user={user}
-          setFeaturedInfo={setFeaturedInfo}
-          setTitle={setTitle}
-        />
-
-        {/* Buttons Container */}
-        <Buttons user={user} featuredInfo={featuredInfo} />
+        <Icons user={user} setFeaturedInfo={setFeaturedInfo} />
       </Card.Body>
 
-      <AddUser user={user} featuredInfo={featuredInfo} />
+      {/* get temp usr is a function it is for event triggering when with new user button */}
+      <AddUser user={user} getTempUser={getTempUser} />
     </Card>
   );
 };

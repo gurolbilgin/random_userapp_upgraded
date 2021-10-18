@@ -3,15 +3,3 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-.App {
-  text-align: center;
-  border: 1px solid black;
-  width: 600px;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* padding: 5rem;
-  margin-top: 2rem; */
-}

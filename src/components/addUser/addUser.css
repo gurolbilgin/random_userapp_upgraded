@@ -1,0 +1,11 @@
+/*w/o !important it doesn't work it overrides the default feature of react bootstrap*/
+
+.table {
+  overflow: auto !important;
+  display: block;
+  max-height: 20rem;
+}
+
+.buttons {
+  margin: 1rem;
+}
